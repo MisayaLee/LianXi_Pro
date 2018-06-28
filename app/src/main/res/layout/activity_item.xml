@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <RelativeLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="52dp"
+            android:layout_marginRight="52dp"
+            android:layout_marginTop="21dp"
+            android:text="标题"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/pirce_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_id"
+            android:layout_alignStart="@+id/tv_id"
+            android:layout_below="@+id/tv_id"
+            android:layout_marginTop="29dp"
+            android:text="价格"
+            android:textSize="20sp" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_id"
+            android:layout_width="200dp"
+            android:layout_height="230dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:failureImage="@drawable/ic_launcher_background"
+            app:placeholderImage="@mipmap/ic_launcher" />
+        />
+
+        <Button
+            android:id="@+id/add_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/pirce_id"
+            android:layout_alignRight="@+id/pirce_id"
+            android:layout_below="@+id/pirce_id"
+            android:layout_marginTop="21dp"
+            android:onClick="onClick"
+            android:text="加入购物车" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/colorPrimary" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="购物车"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/colorPrimary"/>
+        <ImageView
+            android:background="@mipmap/a2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/car_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/car_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="42dp"
+            android:layout_marginStart="42dp"
+            android:layout_toEndOf="@+id/car_image"
+            android:layout_toRightOf="@+id/car_image"
+            android:text="物品名称" />
+
+        <TextView
+            android:id="@+id/car_pirce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/car_title"
+            android:layout_alignStart="@+id/car_title"
+            android:layout_below="@+id/car_title"
+            android:layout_marginTop="20dp"
+            android:text="物品价格" />
+
+
+        <LinearLayout
+            android:id="@+id/list"
+            android:layout_width="220dp"
+            android:layout_height="35dp"
+            android:layout_alignLeft="@+id/car_pirce"
+            android:layout_below="@id/car_pirce"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_mes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="数量" />
+
+            <Button
+                android:id="@+id/car_add"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="+" />
+
+            <TextView
+                android:id="@+id/car_num"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="数 量" />
+
+            <Button
+                android:id="@+id/car_delete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="-" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:id="@+id/total_ZD"
+            android:layout_below="@+id/Submit_intent"
+            android:text="账单"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_below="@+id/car_image"
+            android:id="@+id/Submit_intent"
+            android:text="结算"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>
